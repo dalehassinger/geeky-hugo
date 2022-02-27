@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SaltStack Config on vCROCS</title>
+    <link>https://dalehassinger.github.io/geeky-hugo/categories/saltstack-config/</link>
+    <description>Recent content in SaltStack Config on vCROCS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Feb 2022 00:00:00 -0500</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/categories/saltstack-config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 8</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-08/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-08/</guid>
+      <description>Part 8: Pouring the salt grains
+My previous posts about grain data were to show how to add minion grain data during the creation of a new server with vRA using PowerShell.</description>
+    </item>
+    
+  </channel>
+</rss>
