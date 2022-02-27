@@ -6,11 +6,11 @@
     <description>Recent content in Tags on vCROCS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0600</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 -0500</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/azure/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/azure/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>Giving Back</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/giving-back/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/giving-back/</guid>
       <description></description>
@@ -28,7 +28,7 @@
     <item>
       <title>vCommunity</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/vcommunity/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/vcommunity/</guid>
       <description></description>
@@ -37,7 +37,7 @@
     <item>
       <title>vExpert 2020</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/vexpert-2020/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/vexpert-2020/</guid>
       <description></description>
@@ -46,7 +46,7 @@
     <item>
       <title>vExpert 2021</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/vexpert-2021/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/vexpert-2021/</guid>
       <description></description>
@@ -55,7 +55,7 @@
     <item>
       <title>vExpert 2022</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/vexpert-2022/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/vexpert-2022/</guid>
       <description></description>
@@ -64,7 +64,7 @@
     <item>
       <title>VMware</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/vmware/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/vmware/</guid>
       <description></description>
@@ -73,9 +73,18 @@
     <item>
       <title>vRealize</title>
       <link>https://dalehassinger.github.io/geeky-hugo/tags/vrealize/</link>
-      <pubDate>Tue, 22 Feb 2022 00:00:00 +0600</pubDate>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 -0500</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/tags/vrealize/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Favorite Links</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/tags/favorite-links/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/tags/favorite-links/</guid>
       <description></description>
     </item>
     
