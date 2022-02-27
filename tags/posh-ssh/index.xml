@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>POSH-SSH on vCROCS</title>
+    <link>https://dalehassinger.github.io/geeky-hugo/tags/posh-ssh/</link>
+    <description>Recent content in POSH-SSH on vCROCS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Jan 2022 00:00:00 -0500</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/tags/posh-ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-07/</link>
+      <pubDate>Fri, 14 Jan 2022 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-07/</guid>
+      <description>Part 7:     The more I use VMware vRealize SaltStack Config as a Windows Server Admin the more I see the importance of having grain information added to the minion to be able to target servers many different ways.</description>
+    </item>
+    
+  </channel>
+</rss>

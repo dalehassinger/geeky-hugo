@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="utf-8">
-<title>PowerShell Module</title>
+<title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</title>
 
 
 
@@ -17,7 +17,7 @@
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-<meta name="description" content="This is meta description">
+<meta name="description" content="description">
 <meta name="author" content="Dale Hassinger">
 <meta name="generator" content="Hugo 0.92.2" />
 
@@ -42,17 +42,19 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
-<meta name="twitter:title" content="PowerShell Module"/>
-<meta name="twitter:description" content="This is meta description"/>
-<meta property="og:title" content="PowerShell Module" />
-<meta property="og:description" content="This is meta description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://dalehassinger.github.io/geeky-hugo/tags/powershell-module/" />
+<meta name="twitter:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7"/>
+<meta name="twitter:description" content="description"/>
+<meta property="og:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7" />
+<meta property="og:description" content="description" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-07/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-01-14T00:00:00-05:00" />
+<meta property="article:modified_time" content="2022-01-14T00:00:00-05:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PowerShell Module"/>
-<meta name="twitter:description" content="This is meta description"/>
+<meta name="twitter:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7"/>
+<meta name="twitter:description" content="description"/>
 
 
 
@@ -363,151 +365,342 @@
 		
 
 
-<section class="section">
+
+
+
+<section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="section-title">
-          <h2 class="h4">Showing Post From <span class="title-border">PowerShell Module</span></h2>
-        </div>
-      </div>
-    </div>
-    <div class="row">
       <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="border mb-5 pt-4 rounded">
-          <div class="row mx-0 g-5">
-            
-            
-            
-            <div class="col-sm-6 mb-4">
-              <div class="card">
-  
-  
-  
-  <div class="mb-4 position-relative">
-    
-    
-    
+        
+        
+        
+        <div class="position-relative">
+          
+          
+          
 
-    
-    
-    
-    
-    
-    
-    
-    <picture>
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q90_h2_box_3.webp">
-      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
-        alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 8" width="1940" height="1000">
-    </picture>
-    
-    
-    
-    <ul class="list-inline card-badge">
-      
-      <li class="list-inline-item">
-        <a href="/geeky-hugo/categories/saltstack-config/" class="badge badge-primary py-1">SaltStack Config</a>
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="card-body">
-    <h3 class="h6">
-      <a class="title-linked" href="/geeky-hugo/blog/saltstack-config-part-08/">VMware vRealize SaltStack Config as a Windows Server Admin - Part 8</a>
-    </h3>
-    <ul class="list-inline card-meta d-flex align-items-center mb-3">
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-user me-2"></i>
-        <a href="/geeky-hugo/about/">Dale Hassinger</a>
-      </li>
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-calendar me-2"></i>
-        <span>February 12, 2022</span>
-      </li>
-    </ul>
-    <p class="card-text mb-4">Part 8: Pouring the salt grains    My previous posts about grain data were to show how to add minion grain data during the creation of a new server with vRA using PowerShell.</p>
-    <a href="/geeky-hugo/blog/saltstack-config-part-08/" class="btn btn-outline-primary btn-sm">Read more</a>
-  </div>
-</div>
-            </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          <picture>
+            <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
+            <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_800x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
+            <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1000x0_resize_q90_h2_box_3.webp" media="(max-width: 992px)">
+            <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1400x0_resize_q90_h2_box_3.webp">
+            <img loading="lazy" decoding="async" class="img-fluid mb-5 w-100 rounded-4"
+              src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1400x0_resize_box_3.png" alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7" width="1940"
+              height="1000">
+          </picture>
+          
+          
+          
+          <ul class="list-inline card-badge">
             
-            <div class="col-sm-6 mb-4">
-              <div class="card">
-  
-  
-  
-  <div class="mb-4 position-relative">
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    <picture>
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q90_h2_box_3.webp">
-      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
-        alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7" width="1940" height="1000">
-    </picture>
-    
-    
-    
-    <ul class="list-inline card-badge">
-      
-      <li class="list-inline-item">
-        <a href="/geeky-hugo/categories/saltstack-config/" class="badge badge-primary py-1">SaltStack Config</a>
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="card-body">
-    <h3 class="h6">
-      <a class="title-linked" href="/geeky-hugo/blog/saltstack-config-part-07/">VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</a>
-    </h3>
-    <ul class="list-inline card-meta d-flex align-items-center mb-3">
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-user me-2"></i>
-        <a href="/geeky-hugo/about/">Dale Hassinger</a>
-      </li>
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-calendar me-2"></i>
-        <span>January 14, 2022</span>
-      </li>
-    </ul>
-    <p class="card-text mb-4">Part 7:     The more I use VMware vRealize SaltStack Config as a Windows Server Admin the more I see the importance of having grain information added to the minion to be able to target servers many different ways.</p>
-    <a href="/geeky-hugo/blog/saltstack-config-part-07/" class="btn btn-outline-primary btn-sm">Read more</a>
-  </div>
-</div>
-            </div>
+            <li class="list-inline-item">
+              <a href="/geeky-hugo/categories/saltstack-config" class="badge badge-primary py-1">SaltStack Config</a>
+            </li>
             
-          </div>
+          </ul>
         </div>
+        
+        <h1 class="h3 mb-4">VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</h1>
+        <ul class="list-inline card-meta d-flex align-items-center mb-4">
+          <li class="list-inline-item d-flex align-items-center">
+            <i class="fas fa-user me-2"></i>
+            <a href="/geeky-hugo/about">Dale Hassinger</a>
+          </li>
+          <li class="list-inline-item d-flex align-items-center">
+            <i class="fas fa-calendar me-2"></i>
+            <span>January 14, 2022</span>
+          </li>
+        </ul>
+        <div class="content drop-cap"><div>
+  <b>Part 7:</b>
+</div>
+<div>
+  <br>
+</div>
+<div>
+The more I use <b>VMware vRealize SaltStack Config</b> as a <b>Windows Server Admin</b> the more I see the importance of having grain information added to the minion to be able to target servers many different ways. During a recent discussion it was suggested to have the ability to target Windows Server minions by the Windows server Features|Roles that were installed on the server and by which software was installed on a server.  There are built-in salt functions to get Features|Roles and installed software.  Here is the code I used to get the information and add to the minion grain file using PowerShell.  
+</div>
+<p>This will allow you to create targets to:</p>
+<ul>
+<li>minions with specific VMware Tools Versions</li>
+<li>minion with Web Server Feature|Role enabled</li>
+<li>etc&hellip;</li>
+</ul>
+<hr>
+<h6 id="salt-functions">Salt Functions:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># The POSH-SSH PowerShell module MUST be installed to use this code.</span>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<span style="color:#75715e"># Name of Minion that you want to add grain data</span>
+$minion = <span style="color:#e6db74">&#39;DBH-210&#39;</span>
+
+<span style="color:#75715e"># ----- [ SSH Connection to SalStack Config Server ] ------------------------------------</span>
+Write-Host <span style="color:#e6db74">&#39;Making SSH Connection to SaltStack Config Server...&#39;</span>
+
+$Server   = <span style="color:#e6db74">&#39;ssc.vCROCS.local&#39;</span>
+$userName = <span style="color:#e6db74">&#39;root&#39;</span>
+$Password = <span style="color:#e6db74">&#39;VMware#1&#39;</span>
+
+<span style="color:#75715e"># The next line is how to create the encrypted password</span>
+$psPassword = ConvertTo-SecureString -String $Password -AsPlainText -Force
+$creds = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $psPassword
+
+$Params = @{
+    <span style="color:#e6db74">&#34;ComputerName&#34;</span> = $Server
+    <span style="color:#e6db74">&#34;Credential&#34;</span>   = $creds
+} <span style="color:#75715e"># End Params</span>
+
+<span style="color:#75715e"># SSH Connection to SaltStack Server</span>
+$sshSession = Get-SSHSession
+<span style="color:#66d9ef">if</span>($sshSession.SessionId <span style="color:#f92672">-eq</span> 0){
+    Write-Host <span style="color:#e6db74">&#39;SSH Connection to SSC Server already completed&#39;</span>
+} <span style="color:#75715e"># End If</span>
+<span style="color:#66d9ef">else</span>{
+    Write-Host <span style="color:#e6db74">&#39;Creating new SSH Connection to SSC Server&#39;</span>
+    New-SSHSession @Params
+} <span style="color:#75715e"># End Else</span>
+
+<span style="color:#75715e"># ----- [ Start Adding Grain Data ] ---------------------------------------------------------------------------</span>
+
+<span style="color:#75715e"># ----- [ Minion Get Windows Server Features|Roles Installed ] ------------------------------------</span>
+Write-Host <span style="color:#e6db74">&#39;Getting Windows Server Features|Roles Installed...&#39;</span>
+
+$sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; win_servermanager.list_installed --output=json&#39;</span>
+<span style="color:#75715e">#$sshCommand</span>
+
+$Params = @{
+    <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+    <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+} <span style="color:#75715e"># End Params</span>
+
+$results = Invoke-SSHCommand @Params
+
+$features = $results.Output
+$features = $results.Output | ConvertFrom-Json
+$features = $features.PsObject.Properties.Value
+$features = $features | ConvertTo-Xml
+
+<span style="color:#75715e"># Append Each Feature|Role information to grains</span>
+Write-Host <span style="color:#e6db74">&#39;Appending Windows Server Features|Roles Installed to grains...&#39;</span>
+
+$grainsKey = <span style="color:#e6db74">&#39;vCROCS_Windows_Feature&#39;</span>
+
+<span style="color:#66d9ef">foreach</span>($feature <span style="color:#66d9ef">in</span> $features.Objects.Object.Property){
+    $grainsValue = $feature.Name + <span style="color:#e6db74">&#39; | &#39;</span> + $feature.<span style="color:#e6db74">&#39;#text&#39;</span>
+
+    <span style="color:#75715e"># Grains Append</span>
+    $sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; grains.append &#39;</span> + $grainsKey + <span style="color:#e6db74">&#39; &#34;&#39;</span> + $grainsValue + <span style="color:#e6db74">&#39;&#34;&#39;</span>
+    <span style="color:#75715e">#$sshCommand</span>
+
+    $Params = @{
+        <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+        <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+    } <span style="color:#75715e"># End Params</span>
+
+    Invoke-SSHCommand @Params
+    
+} <span style="color:#75715e"># End Foreach</span>
+
+
+
+<span style="color:#75715e"># ----- [ Minion Get Windows Server Installed Software ] ------------------------------------</span>
+Write-Host <span style="color:#e6db74">&#39;Getting Windows Server Installed Software...&#39;</span>
+
+<span style="color:#75715e"># Get Installed Software</span>
+$sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; pkg.list_pkgs --output=json&#39;</span>
+<span style="color:#75715e">#$sshCommand</span>
+
+$Params = @{
+    <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+    <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+} <span style="color:#75715e"># End Params</span>
+
+$results = Invoke-SSHCommand @Params
+
+$installedPackages = $results.Output
+$installedPackages = $installedPackages | ConvertFrom-Json
+$installedPackages = $installedPackages.PsObject.Properties.Value
+$installedPackages = $installedPackages | ConvertTo-Xml
+
+$grainsKey = <span style="color:#e6db74">&#39;vCROCS_Windows_Installed_Software&#39;</span>
+
+<span style="color:#75715e"># Append Windows Server Installed Software to grains</span>
+Write-Host <span style="color:#e6db74">&#39;Appending Windows Server Installed Software to grains...&#39;</span>
+
+<span style="color:#66d9ef">foreach</span>($installedPackage <span style="color:#66d9ef">in</span> $installedPackages.Objects.Object.Property){
+    $grainsValue = $installedPackage.Name + <span style="color:#e6db74">&#39; | &#39;</span> + $installedPackage.<span style="color:#e6db74">&#39;#text&#39;</span>
+
+    <span style="color:#75715e"># Grains Append</span>
+    $sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; grains.append &#39;</span> + $grainsKey + <span style="color:#e6db74">&#39; &#34;&#39;</span> + $grainsValue + <span style="color:#e6db74">&#39;&#34;&#39;</span>
+    <span style="color:#75715e">#$sshCommand</span>
+
+    $Params = @{
+        <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+        <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+    } <span style="color:#75715e"># End Params</span>
+
+    Invoke-SSHCommand @Params
+
+} <span style="color:#75715e"># End Foreach</span>
+
+
+<span style="color:#75715e"># ----- [ Add a Date that grains last updated ] ----------------------------------------------------------------</span>
+$grainsupdateDate = Get-Date
+$grainsValue = $grainsupdateDate.ToString(<span style="color:#e6db74">&#34;MM/dd/yyyy&#34;</span>)
+$grainsKey = <span style="color:#e6db74">&#39;vCROCS_last_grains_update&#39;</span>
+
+<span style="color:#75715e"># Grains Append</span>
+$sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; grains.append &#39;</span> + $grainsKey + <span style="color:#e6db74">&#39; &#34;&#39;</span> + $grainsValue + <span style="color:#e6db74">&#39;&#34;&#39;</span>
+<span style="color:#75715e">#$sshCommand</span>
+
+$Params = @{
+    <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+    <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+} <span style="color:#75715e"># End Params</span>
+
+Invoke-SSHCommand @Params
+
+<span style="color:#75715e"># ----- [ End Adding Grain Data ] ---------------------------------------------------------------------------</span>
+
+<span style="color:#75715e"># ----- [ Sync minion Grain Data ] ------------------------------------------------------------------</span>
+Write-Host <span style="color:#e6db74">&#39;Syncing Minion Grain Data...&#39;</span>
+<span style="color:#75715e"># Sync Grains Data</span>
+$sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; saltutil.sync_grains&#39;</span>
+<span style="color:#75715e">#$sshCommand</span>
+
+$Params = @{
+    <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+    <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+} <span style="color:#75715e"># End Params</span>
+
+Invoke-SSHCommand @Params
+
+<span style="color:#75715e"># ----- [ Disconnect from SaltStack Config Server ] ------------------------------------------------------------------</span>
+Write-Host <span style="color:#e6db74">&#39;Disconnecting from SaltStack Config Server...&#39;</span>
+Remove-SSHSession -SessionId 0
+
+<span style="color:#75715e"># ----- [ End of Code ] ---------------------------------------------------------------------------</span></code></pre></div>
+<hr>
+<h6 id="example-grains-file-after-running-script">Example grains file after running script</h6>
+<p>The default location of the grains file is in directory “C:\salt\conf&quot;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">vCROCS_Windows_Feature<span style="color:#960050;background-color:#1e0010">:</span>
+- FileAndStorage-Services | File and Storage Services
+- NET-Framework-45-Core | .NET Framework 4.7
+- NET-Framework-45-Features | .NET Framework 4.7 Features
+- NET-Framework-Core | .NET Framework 3.5 (includes .NET 2.0 and 3.0)
+- NET-Framework-Features | .NET Framework 3.5 Features
+- NET-WCF-Services45 | WCF Services
+- NET-WCF-TCP-PortSharing45 | TCP Port Sharing
+- PowerShell | Windows PowerShell 5.1
+- PowerShell-ISE | Windows PowerShell ISE
+- PowerShellRoot | Windows PowerShell
+- PowerShell-V2 | Windows PowerShell 2.0 Engine
+- RSAT | Remote Server Administration Tools
+- RSAT-Feature-Tools | Feature Administration Tools
+- RSAT-SNMP | SNMP Tools
+- SNMP-Service | SNMP Service
+- SNMP-WMI-Provider | SNMP WMI Provider
+- Storage-Services | Storage Services
+- System-DataArchiver | System Data Archiver
+- Telnet-Client | Telnet Client
+- WoW64-Support | WoW64 Support
+- XPS-Viewer | XPS Viewer
+vCROCS_Windows_Installed_Software<span style="color:#960050;background-color:#1e0010">:</span>
+- Microsoft Silverlight | 5.1.50918.0
+- Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40664 | 12.0.40664.0
+- Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40664 | 12.0.40664
+- Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40664 | 12.0.40664
+- Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.30.30704 | 14.30.30704.0
+- Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.30.30704 | 14.30.30704.0
+- Microsoft Visual C++ 2022 X64 Additional Runtime - 14.30.30704 | 14.30.30704
+- Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.30.30704 | 14.30.30704
+- Microsoft Visual C++ 2022 X86 Additional Runtime - 14.30.30704 | 14.30.30704
+- Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.30.30704 | 14.30.30704
+- Salt Minion 3003.1 (Python 3) | 3003.1
+- UniversalForwarder | 8.2.4.0
+- VMware Tools | 11.3.5.18557794
+vCROCS_last_grains_update<span style="color:#960050;background-color:#1e0010">:</span>
+- 01/14/2022</code></pre></div>
+<hr>
+<h6 id="saltstack-target-using-windows-server-software-installed">SaltStack Target using Windows Server Software Installed:</h6>
+<p>Show all minions that have VMware Tools | 11.3.5.18557794 installed</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img loading="lazy" decoding="async" class="rounded img-center" width="1181" height="413" src="/geeky-hugo/images/post/Salt-48_hu0292dd4b90fc2afdc85eebb01a4322e1_78960_1181x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/Salt-48_hu0292dd4b90fc2afdc85eebb01a4322e1_78960_1181x0_resize_box_3.PNG'">
+
+
+
+
+
+
+
+
+<a href="https://github.com/dalehassinger/geeky/raw/main/assets/images/post/Salt-48.PNG" target="_blank">Click Here to see Larger Image of Screen Shot</a></p>
+<hr>
+<p>Lessons Learned:</p>
+<ul>
+<li>Windows Server Features|Roles make a great way to target minions.</li>
+<li>Windows Server installed software also makes a great way to target minions.</li>
+</ul>
+<hr>
+<p>Salt Links I found to be very helpful:</p>
+<ul>
+<li><a href="https://sites.google.com/site/mrxpalmeiras/saltstack/salt-cheat-sheet" target="_blank">SaltStack Cheat Sheet</a></li>
+<li><a href="https://docs.saltproject.io/en/getstarted/"                            target="_blank">SaltStack Tutorials</a></li>
+<li><a href="https://docs.saltproject.io/en/latest/contents.html"                   target="_blank">SaltStack Documentation</a></li>
+<li><a href="https://saltstackcommunity.slack.com"                                  target="_blank">SaltStack Community Slack Channel</a></li>
+<li><a href="https://learnvrealizeautomation.github.io"                             target="_blank">Learn vRealize Automation</a></li>
+<li><a href="https://learnsaltstackconfig.github.io/"                               target="_blank">Learn SaltStack Config</a></li>
+</ul>
+<hr>
+<div>
+When I write about <b>vRealize Automation</b> ("vRA") I always say there are many ways to accomplish the same task.  <b>SaltStack Config</b> is the same way.  I am showing what I felt was important to see but every organization/environment will be different. There is no right or wrong way to use Salt. This is a <b>GREAT Tool</b> that is included with your vRealize Suite Advanced/Enterprise license. If you own the vRealize Suite, you own SaltStack Config.
+</div></div>
         
         
       </div>
-
       
       <aside class="col-lg-4">
         
@@ -773,6 +966,171 @@
     </div>
   </div>
 </section>
+
+
+
+<section class="section-sm pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2 class="h4 title-border">Releted Posts</h2>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      
+      
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+      <div class="card">
+  
+  
+  
+  <div class="mb-4">
+    
+  </div>
+  
+  <div class="card-body">
+    <h3 class="h6">
+      <a class="title-linked" href="/geeky-hugo/blog/links/">Favorite Links</a>
+    </h3>
+    <ul class="list-inline card-meta d-flex align-items-center mb-3">
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-user me-2"></i>
+        <a href="/geeky-hugo/about/">Dale Hassinger</a>
+      </li>
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-calendar me-2"></i>
+        <span>January 1, 2020</span>
+      </li>
+    </ul>
+    <p class="card-text mb-4">Links to some of my favorite Bloggers and Content: Bloggers:  Brock Peterson - vRealize Master LucD - PowerShell Master William Lam - VMware Master Yellow Bricks  VMware:  VMware Operations Management Book - Great Book!</p>
+    <a href="/geeky-hugo/blog/links/" class="btn btn-outline-primary btn-sm">Read more</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+      <div class="card">
+  
+  
+  
+  <div class="mb-4 position-relative">
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <picture>
+      <source srcset="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
+      <source srcset="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
+      <source srcset="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_650x0_resize_q90_h2_box_3.webp">
+      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_650x0_resize_box_3.png"
+        alt="vExpert 2022" width="1940" height="1000">
+    </picture>
+    
+    
+    
+    <ul class="list-inline card-badge">
+      
+      <li class="list-inline-item">
+        <a href="/geeky-hugo/categories/vexpert/" class="badge badge-primary py-1">VExpert</a>
+      </li>
+      
+    </ul>
+  </div>
+  
+  <div class="card-body">
+    <h3 class="h6">
+      <a class="title-linked" href="/geeky-hugo/blog/vexpert-2022/">vExpert 2022</a>
+    </h3>
+    <ul class="list-inline card-meta d-flex align-items-center mb-3">
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-user me-2"></i>
+        <a href="/geeky-hugo/about/">Dale Hassinger</a>
+      </li>
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-calendar me-2"></i>
+        <span>February 22, 2022</span>
+      </li>
+    </ul>
+    <p class="card-text mb-4">vExpert 2020 - 2022   I am very proud to be part of the VMware vExpert program. This is the third year that I was accepted into the program.</p>
+    <a href="/geeky-hugo/blog/vexpert-2022/" class="btn btn-outline-primary btn-sm">Read more</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+      <div class="card">
+  
+  
+  
+  <div class="mb-4 position-relative">
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <picture>
+      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
+      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
+      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q90_h2_box_3.webp">
+      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
+        alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 8" width="1940" height="1000">
+    </picture>
+    
+    
+    
+    <ul class="list-inline card-badge">
+      
+      <li class="list-inline-item">
+        <a href="/geeky-hugo/categories/saltstack-config/" class="badge badge-primary py-1">SaltStack Config</a>
+      </li>
+      
+    </ul>
+  </div>
+  
+  <div class="card-body">
+    <h3 class="h6">
+      <a class="title-linked" href="/geeky-hugo/blog/saltstack-config-part-08/">VMware vRealize SaltStack Config as a Windows Server Admin - Part 8</a>
+    </h3>
+    <ul class="list-inline card-meta d-flex align-items-center mb-3">
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-user me-2"></i>
+        <a href="/geeky-hugo/about/">Dale Hassinger</a>
+      </li>
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-calendar me-2"></i>
+        <span>February 12, 2022</span>
+      </li>
+    </ul>
+    <p class="card-text mb-4">Part 8: Pouring the salt grains    My previous posts about grain data were to show how to add minion grain data during the creation of a new server with vRA using PowerShell.</p>
+    <a href="/geeky-hugo/blog/saltstack-config-part-08/" class="btn btn-outline-primary btn-sm">Read more</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
 
 
 

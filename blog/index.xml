@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-07/</link>
+      <pubDate>Fri, 14 Jan 2022 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-07/</guid>
+      <description>Part 7:     The more I use VMware vRealize SaltStack Config as a Windows Server Admin the more I see the importance of having grain information added to the minion to be able to target servers many different ways.</description>
+    </item>
+    
+    <item>
       <title>Favorite Links</title>
       <link>https://dalehassinger.github.io/geeky-hugo/blog/links/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
