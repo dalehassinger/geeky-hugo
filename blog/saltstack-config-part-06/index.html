@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="utf-8">
-<title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 8</title>
+<title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 6</title>
 
 
 
@@ -42,18 +42,18 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
-<meta name="twitter:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 8"/>
+<meta name="twitter:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 6"/>
 <meta name="twitter:description" content="description"/>
-<meta property="og:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 8" />
+<meta property="og:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 6" />
 <meta property="og:description" content="description" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-08/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-02-12T00:00:00-05:00" />
-<meta property="article:modified_time" content="2022-02-12T00:00:00-05:00" />
+<meta property="og:url" content="https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-06/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-10-09T00:00:00-05:00" />
+<meta property="article:modified_time" content="2021-10-09T00:00:00-05:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 8"/>
+<meta name="twitter:title" content="VMware vRealize SaltStack Config as a Windows Server Admin - Part 6"/>
 <meta name="twitter:description" content="description"/>
 
 
@@ -394,7 +394,7 @@
             <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1000x0_resize_q90_h2_box_3.webp" media="(max-width: 992px)">
             <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1400x0_resize_q90_h2_box_3.webp">
             <img loading="lazy" decoding="async" class="img-fluid mb-5 w-100 rounded-4"
-              src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1400x0_resize_box_3.png" alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 8" width="1940"
+              src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_1400x0_resize_box_3.png" alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 6" width="1940"
               height="1000">
           </picture>
           
@@ -409,7 +409,7 @@
           </ul>
         </div>
         
-        <h1 class="h3 mb-4">VMware vRealize SaltStack Config as a Windows Server Admin - Part 8</h1>
+        <h1 class="h3 mb-4">VMware vRealize SaltStack Config as a Windows Server Admin - Part 6</h1>
         <ul class="list-inline card-meta d-flex align-items-center mb-4">
           <li class="list-inline-item d-flex align-items-center">
             <i class="fas fa-user me-2"></i>
@@ -417,95 +417,15 @@
           </li>
           <li class="list-inline-item d-flex align-items-center">
             <i class="fas fa-calendar me-2"></i>
-            <span>February 12, 2022</span>
+            <span>October 9, 2021</span>
           </li>
         </ul>
         <div class="content drop-cap"><div>
-  <b>Part 8: Pouring the salt grains</b>
+  <b>Part 6: How to use SaltStack Config with Windows Server and PowerShell</b>
 </div>
 <div>
   <br>
 </div>
-<p>My previous posts about grain data were to show how to add minion grain data during the creation of a new server with vRA using PowerShell. This post I want to show how I&rsquo;m going to maintain the grain data that is not default out of the box grain data.</p>
-<hr>
-<p>Windows Server grain data not available out of the of box that I want to add to every minion AND make sure the grain data stays up to date:</p>
-<ul>
-<li>Windows Server Features | Roles</li>
-<li>Windows Server Installed Software</li>
-<li>Windows Server Running Services</li>
-</ul>
-<hr>
-<p>These are the steps that I use to maintain custom grain data with a Windows Server:</p>
-<ul>
-<li>Create a PowerShell Script that can run locally on a minion. Add the script to the SaltStack Config File Manager. Use salt-call to run salt.functions locally on a minion. See screen shot and my code examples below.</li>
-<li>Create a SaltStack Config Job to execute the PowerShell Script remotely on the minion. See Screen Shot.</li>
-<li>Create a SaltStack Config Schedule to run the job that you create. The job can run every day, once a week, every 4 hours. Whatever makes sense for your use case. See Screen Shot.</li>
-</ul>
-<hr>
-<p>If you want to run a script locally on a minion and use salt functions that is where you use the salt-call command. After you learn the salt-functions and are logged into a Windows Server locally, you can still use salt commands by using salt-call.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># --- example code</span>
-salt-call --version
-salt-call test.ping
-
-<span style="color:#75715e"># --- Show Disk Usage</span>
-salt-call disk.usage
-
-<span style="color:#75715e"># --- Show Installed Features|Roles</span>
-salt-call win_servermanager.list_installed
-
-<span style="color:#75715e"># --- Show Installed Sofwtare</span>
-salt-call pkg.list_pkgs</code></pre></div>
-<p><a href="https://docs.saltproject.io/en/latest/ref/cli/salt-call.html">Link to salt-call Documentation</a></p>
-<hr>
-<h6 id="step-1---add-script-to-saltstack-config-file-manager">Step 1 - Add script to SaltStack Config File Manager:</h6>
-<p>See code examples below to add Windows Server Features|Roles, Installed Software, and Runnings Services as grain data.<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img loading="lazy" decoding="async" class="rounded img-center" width="1527" height="1050" src="/geeky-hugo/images/post/Salt-49_hu84322532a01e4c6be54730918a17dda9_148828_1527x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/Salt-49_hu84322532a01e4c6be54730918a17dda9_148828_1527x0_resize_box_3.PNG'">
-
-
-
-
-
-
-
-
-<a href="https://github.com/dalehassinger/geeky/raw/main/assets/images/post/Salt-49.PNG" target="_blank">Click Here to see Larger Image of Screen Shot</a></p>
-<h6 id="step-2---create-saltstack-config-job">Step 2 - Create SaltStack Config Job:</h6>
 <p>
 
 
@@ -542,18 +462,7 @@ salt-call pkg.list_pkgs</code></pre></div>
 
 
 
-<img loading="lazy" decoding="async" class="rounded img-center" width="1366" height="919" src="/geeky-hugo/images/post/Salt-50_hu8dabd5bbd96f30ed91d1980cbee4671e_99331_1366x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/Salt-50_hu8dabd5bbd96f30ed91d1980cbee4671e_99331_1366x0_resize_box_3.PNG'">
-
-
-
-
-
-
-
-
-<a href="https://github.com/dalehassinger/geeky/raw/main/assets/images/post/Salt-50.PNG" target="_blank">Click Here to see Larger Image of Screen Shot</a></p>
-<h6 id="step-3---create-saltstack-config-schedule">Step 3 - Create SaltStack Config Schedule:</h6>
-<p>
+<img loading="lazy" decoding="async" class="rounded img-center" width="256" height="256" src="/geeky-hugo/images/post/ps_hue9126b37ceba28dc6e2a7cb32c243a6c_9477_256x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/ps_hue9126b37ceba28dc6e2a7cb32c243a6c_9477_256x0_resize_box_3.png'">
 
 
 
@@ -589,7 +498,6 @@ salt-call pkg.list_pkgs</code></pre></div>
 
 
 
-<img loading="lazy" decoding="async" class="rounded img-center" width="1460" height="1013" src="/geeky-hugo/images/post/Salt-51_hu255c3a5aec69bdc03802ee3728ae50fb_112460_1460x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/Salt-51_hu255c3a5aec69bdc03802ee3728ae50fb_112460_1460x0_resize_box_3.PNG'">
 
 
 
@@ -598,324 +506,279 @@ salt-call pkg.list_pkgs</code></pre></div>
 
 
 
-<a href="https://github.com/dalehassinger/geeky/raw/main/assets/images/post/Salt-51.PNG" target="_blank">Click Here to see Larger Image of Screen Shot</a></p>
+
+<img loading="lazy" decoding="async" class="rounded img-center" width="184" height="160" src="/geeky-hugo/images/post/powercli_hu1300d4acdbbae26b9d4bb003ac884b19_10462_184x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/powercli_hu1300d4acdbbae26b9d4bb003ac884b19_10462_184x0_resize_box_3.png'">
+
+
+
+
+
+
+
+</p>
+<div>
+The latest item on my journey with <b>VMware vRealize SaltStack Config</b> as a <b>Windows Server Admin</b> is going to be a lot PowerShell. I use PowerShell for a lot of Automation, Windows Server and Linux Server. When working with <b>VMware vRealize SaltStack Config</b> I constantly found myself going to the CLI to test and learn how the salt functions work.  
+<p>In the <a href="https://www.vcrocs.info/2021/10/vmware-vrealize-saltstack-config-as-a-windows-server-admin-part-5/" target="_blank">Part 5 Blog</a> of this series I showed how I am using the PowerShell module POSH-SSH to connect to the <b>VMware vRealize SaltStack Config</b> Server to run salt commands remotely. So I started writing some PowerShell functions to run remote salt commands on the Salt Master. The end goal might be to turn this script into a Salt PowerShell Module. To start it will only have the functions that I find myself using the most. I could turn this into a community Github Project and see if there would be any interest. If anyone reading this blog post has any interest please reach out to me. (<a href="mailto:Dale.Hassinger@vCROCS.info">Dale.Hassinger@vCROCS.info</a>)</p>
+<p>My goal is to make all these PowerShell Salt functions work with <b>VMware vRealize SaltStack Config</b> like PowerCLI works with <b>VMware vCenter</b>. Use same verb/noun terminology. I use PowerCLI for all my VMware Automation. Works awesome! So to create these PowerShell Functions to work with my existing automation scripts is a win win in my book.</p>
+<p>Normally I will use a Products APIs to do all these types of processes. I looked at <b>VMware vRealize SaltStack Config</b> APIs and to the best of my knowledge I can not use them like I can the PS functions that I created. That may change in a future release of <b>VMware vRealize SaltStack Config</b>. Fingers crossed.</p>
+</div>
 <hr>
-<h6 id="code-examples">Code Examples:</h6>
-<h6 id="--add-windows-features--roles-as-grain-data">- Add Windows Features | Roles as grain data:</h6>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e">&lt;#
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.SYNOPSIS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  This Script is used to Get Windows Servers Features and add as Grain Data
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.DESCRIPTION</span><span style="color:#75715e">
-</span><span style="color:#75715e">  Windows Servers Features
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.PARAMETER</span><span style="color:#75715e">
-</span><span style="color:#75715e">  No Parameters
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.INPUTS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  No inputs
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.OUTPUTS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  salt grain data
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.NOTES</span><span style="color:#75715e">
-</span><span style="color:#75715e">  Version:        1.00
-</span><span style="color:#75715e">  Author:         Dale Hassinger
-</span><span style="color:#75715e">  Creation Date:  04/20/2022
-</span><span style="color:#75715e">  Purpose/Change: Initial script development
-</span><span style="color:#75715e">  Revisions:
-</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.EXAMPLE</span><span style="color:#75715e">
-</span><span style="color:#75715e">    N/A
-</span><span style="color:#75715e">#&gt;</span>
-
-<span style="color:#75715e"># ----- [ Start of Code ] ---------------------------------------------------------------------------</span>
-
-<span style="color:#75715e"># --- Minion Get Windows Server Features Installed</span>
-
-<span style="color:#75715e"># --- Delete existing grains features data</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.delkey sem_Windows_Feature force=True&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-$saltCommand = <span style="color:#e6db74">&#39;salt-call win_servermanager.list_installed --output=json&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-$results =Invoke-Expression -Command $saltCommand
-<span style="color:#75715e">#$results</span>
-$features = $results | ConvertFrom-Json
-<span style="color:#75715e">#$features</span>
-$features = $features.local
-<span style="color:#75715e">#$features</span>
-$features = $features -split(<span style="color:#e6db74">&#34;:&#34;</span>)
-$features = $features -split(<span style="color:#e6db74">&#34;;&#34;</span>)
-$features = $features <span style="color:#f92672">-replace</span>(<span style="color:#e6db74">&#34;@{&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
-$features = $features <span style="color:#f92672">-replace</span>(<span style="color:#e6db74">&#34;}&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
-$features = $features.trim()
-$features = $features <span style="color:#f92672">-replace</span>(<span style="color:#e6db74">&#34;=&#34;</span>,<span style="color:#e6db74">&#34; | &#34;</span>)
-$features = $features | Sort-Object
-<span style="color:#75715e">#$features</span>
-
-
-<span style="color:#66d9ef">foreach</span>($feature <span style="color:#66d9ef">in</span> $features){
-    <span style="color:#75715e"># --- Grains Append</span>
-    $saltCommand = <span style="color:#e6db74">&#39;salt-call grains.append sem_Windows_Feature &#34;&#39;</span> + $feature + <span style="color:#e6db74">&#39;&#34;&#39;</span>
-    <span style="color:#75715e">#$saltCommand</span>
-
-    <span style="color:#75715e"># --- Run Salt Command</span>
-    Invoke-Expression -Command $saltCommand
-
-} <span style="color:#75715e"># End Foreach</span>
-
-<span style="color:#75715e"># --- Delete existing grains last update data</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.delkey sem_last_grains_update force=True&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-<span style="color:#75715e"># --- Add a Date that grains last updated</span>
-$grainsupdateDate = Get-Date
-$grainsupdateDate = $grainsupdateDate.ToString(<span style="color:#e6db74">&#34;MM/dd/yyyy | hh:mm&#34;</span>)
-<span style="color:#75715e">#$grainsupdateDate</span>
-
-<span style="color:#75715e"># --- Grains Append</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.append sem_last_grains_update &#34;&#39;</span> + $grainsupdateDate + <span style="color:#e6db74">&#39;&#34;&#39;</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-<span style="color:#75715e"># --- Grains Sync</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call saltutil.sync_grains&#39;</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-<span style="color:#75715e"># ----- [ End of Code ] ---------------------------------------------------------------------------</span></code></pre></div>
-<hr>
-<h6 id="--add-windows-server-installed-packagessoftware-as-grain-data">- Add Windows Server Installed Packages|Software as grain data:</h6>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e">&lt;#
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.SYNOPSIS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  This Script is used to Get Windows Installed Packages and add as Grain Data
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.DESCRIPTION</span><span style="color:#75715e">
-</span><span style="color:#75715e">  Windows Servers Installed Packages
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.PARAMETER</span><span style="color:#75715e">
-</span><span style="color:#75715e">  No Parameters
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.INPUTS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  No inputs
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.OUTPUTS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  salt grain data
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.NOTES</span><span style="color:#75715e">
-</span><span style="color:#75715e">  Version:        1.00
-</span><span style="color:#75715e">  Author:         Dale Hassinger
-</span><span style="color:#75715e">  Creation Date:  04/20/2022
-</span><span style="color:#75715e">  Purpose/Change: Initial script development
-</span><span style="color:#75715e">  Revisions:
-</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.EXAMPLE</span><span style="color:#75715e">
-</span><span style="color:#75715e">    N/A
-</span><span style="color:#75715e">#&gt;</span>
-
-<span style="color:#75715e"># ----- [ Start of Code ] ---------------------------------------------------------------------------</span>
-
-<span style="color:#75715e"># --- Minion Get Windows Server Installed Packages|Software</span>
-
-<span style="color:#75715e"># --- Delete existing grains features data</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.delkey sem_Windows_Installed_Software force=True&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-$saltCommand = <span style="color:#e6db74">&#39;salt-call pkg.list_pkgs --output=json&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-$results =Invoke-Expression -Command $saltCommand
-<span style="color:#75715e">#$results</span>
-
-$installedPackages = $results | ConvertFrom-Json
-$installedPackages = $installedPackages.local
-$installedPackages = $installedPackages -split(<span style="color:#e6db74">&#34;:&#34;</span>)
-$installedPackages = $installedPackages -split(<span style="color:#e6db74">&#34;;&#34;</span>)
-$installedPackages = $installedPackages <span style="color:#f92672">-replace</span>(<span style="color:#e6db74">&#34;@{&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
-$installedPackages = $installedPackages <span style="color:#f92672">-replace</span>(<span style="color:#e6db74">&#34;}&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
-$installedPackages = $installedPackages.trim()
-$installedPackages = $installedPackages <span style="color:#f92672">-replace</span>(<span style="color:#e6db74">&#34;=&#34;</span>,<span style="color:#e6db74">&#34; | &#34;</span>)
-$installedPackages = $installedPackages | Sort-Object
-<span style="color:#75715e">#$installedPackages</span>
-
-<span style="color:#66d9ef">foreach</span>($installedPackage <span style="color:#66d9ef">in</span> $installedPackages){
-    <span style="color:#75715e"># --- Grains Append</span>
-    $saltCommand = <span style="color:#e6db74">&#39;salt-call grains.append sem_Windows_Installed_Software &#34;&#39;</span> + $installedPackage + <span style="color:#e6db74">&#39;&#34;&#39;</span>
-    <span style="color:#75715e">#$saltCommand</span>
-
-    <span style="color:#75715e"># --- Run Salt Command</span>
-    Invoke-Expression -Command $saltCommand
-} <span style="color:#75715e"># End Foreach</span>
-
-<span style="color:#75715e"># --- Delete existing grains last update data</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.delkey sem_last_grains_update force=True&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-<span style="color:#75715e"># --- Add a Date that grains last updated</span>
-$grainsupdateDate = Get-Date
-$grainsupdateDate = $grainsupdateDate.ToString(<span style="color:#e6db74">&#34;MM/dd/yyyy | hh:mm&#34;</span>)
-<span style="color:#75715e">#$grainsupdateDate</span>
-
-<span style="color:#75715e"># --- Grains Append</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.append sem_last_grains_update &#34;&#39;</span> + $grainsupdateDate + <span style="color:#e6db74">&#39;&#34;&#39;</span>
-
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
-
-<span style="color:#75715e"># --- Grains Sync</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call saltutil.sync_grains&#39;</span>
+<h6 id="salt-powershell-functions">Salt PowerShell Functions:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># ----- [ Start of Functions ] --------------------------------------------------------------------------------------------------------------</span>
+<span style="color:#75715e"># The POSH-SSH PS module MUST be installed to use these functions.</span>
 
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
+<span style="color:#75715e"># Function to Connect to SSC Server</span>
+<span style="color:#66d9ef">function</span> Connect-SSCServer 
+{
+    <span style="color:#66d9ef">param</span>(
 
-<span style="color:#75715e"># ----- [ End of Code ] ---------------------------------------------------------------------------</span></code></pre></div>
-<hr>
-<h6 id="--add-windows-running-services-as-grain-data">- Add Windows Running Services as grain data:</h6>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e">&lt;#
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.SYNOPSIS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  This Script is used to Get Windows Servers Running Services and add as Grain Data
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.DESCRIPTION</span><span style="color:#75715e">
-</span><span style="color:#75715e">  Windows Servers Running Services
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.PARAMETER</span><span style="color:#75715e">
-</span><span style="color:#75715e">  No Parameters
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.INPUTS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  No inputs
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.OUTPUTS</span><span style="color:#75715e">
-</span><span style="color:#75715e">  salt grain data
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.NOTES</span><span style="color:#75715e">
-</span><span style="color:#75715e">  Version:        1.00
-</span><span style="color:#75715e">  Author:         Dale Hassinger
-</span><span style="color:#75715e">  Creation Date:  04/20/2022
-</span><span style="color:#75715e">  Purpose/Change: Initial script development
-</span><span style="color:#75715e">  Revisions:
-</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#e6db74">.EXAMPLE</span><span style="color:#75715e">
-</span><span style="color:#75715e">    N/A
-</span><span style="color:#75715e">#&gt;</span>
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$Server,
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$userName,
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$Password
 
-<span style="color:#75715e"># ----- [ Start of Code ] ---------------------------------------------------------------------------</span>
+    ) <span style="color:#75715e"># End Parameters</span>
 
-<span style="color:#75715e"># --- Minion Get Windows Server Running Services</span>
+    <span style="color:#75715e"># The next line is how to create the encrypted password</span>
+    $psPassword = ConvertTo-SecureString -String $global:HashiPW -AsPlainText -Force
+    $creds = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $psPassword
 
-<span style="color:#75715e"># --- Delete existing grains running services data</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.delkey sem_Windows_Services_Running force=True&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
+    $Params = @{
+        <span style="color:#e6db74">&#34;ComputerName&#34;</span> = $Server
+        <span style="color:#e6db74">&#34;Credential&#34;</span>   = $creds
+    } <span style="color:#75715e"># End Params</span>
+      
+    <span style="color:#75715e"># SSH Connection to SaltStack Server</span>
+    New-SSHSession @Params
 
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
+} <span style="color:#75715e"># End Function</span>
 
-<span style="color:#75715e"># --- Get all Running Services</span>
-$serviceNames = Get-Service | Where-Object {$_.Status <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#39;Running&#39;</span>}
 
-<span style="color:#75715e"># --- Create Array</span>
-$servicesGrains = @()
 
-<span style="color:#75715e"># --- Add Service data to the array</span>
-<span style="color:#66d9ef">foreach</span>($serviceName <span style="color:#66d9ef">in</span> $serviceNames){
-  $grainString = $serviceName.Name + <span style="color:#e6db74">&#39; | &#39;</span> + $serviceName.DisplayName
-  $servicesGrains = $servicesGrains + $grainString
-} <span style="color:#75715e"># End Foreach</span>
-<span style="color:#75715e">#$servicesGrains</span>
 
-<span style="color:#75715e"># --- Add Windows Running Services as Grain Data</span>
-<span style="color:#66d9ef">foreach</span>($servicesGrain <span style="color:#66d9ef">in</span> $servicesGrains){
-    <span style="color:#75715e"># --- Grains Append</span>
-    $saltCommand = <span style="color:#e6db74">&#39;salt-call grains.append sem_Windows_Services_Running &#34;&#39;</span> + $servicesGrain + <span style="color:#e6db74">&#39;&#34;&#39;</span>
-    <span style="color:#75715e">#$saltCommand</span>
 
-    <span style="color:#75715e"># --- Run Salt Command</span>
-    Invoke-Expression -Command $saltCommand
+<span style="color:#75715e"># Function to Disconnect from SSC Server</span>
+<span style="color:#66d9ef">function</span> Disconnect-SSCServer
+{
+    Remove-SSHSession -SessionId 0
+} <span style="color:#75715e"># End Function</span>
 
-} <span style="color:#75715e"># End Foreach</span>
 
-<span style="color:#75715e"># --- Delete existing grains last update data</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.delkey sem_last_grains_update force=True&#39;</span>
-<span style="color:#75715e">#$saltCommand</span>
 
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
 
-<span style="color:#75715e"># --- Add a Date that grains last updated</span>
-$grainsupdateDate = Get-Date
-$grainsupdateDate = $grainsupdateDate.ToString(<span style="color:#e6db74">&#34;MM/dd/yyyy | hh:mm&#34;</span>)
-<span style="color:#75715e">#$grainsupdateDate</span>
 
-<span style="color:#75715e"># --- Grains Append</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call grains.append sem_last_grains_update &#34;&#39;</span> + $grainsupdateDate + <span style="color:#e6db74">&#39;&#34;&#39;</span>
+<span style="color:#75715e"># Sync Minion grains</span>
+<span style="color:#66d9ef">function</span> invoke-SSC.sync.grains
+{
+    <span style="color:#66d9ef">param</span>(
+    [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+    <span style="color:#66d9ef">[string]</span>$minion
+    )
 
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
+    <span style="color:#75715e"># Sync Grains after adding new grain information</span>
+    $sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; saltutil.sync_grains --output=json&#39;</span>
+    <span style="color:#75715e">#$sshCommand</span>
 
-<span style="color:#75715e"># --- Grains Sync</span>
-$saltCommand = <span style="color:#e6db74">&#39;salt-call saltutil.sync_grains&#39;</span>
 
-<span style="color:#75715e"># --- Run Salt Command</span>
-Invoke-Expression -Command $saltCommand
+    $Params = @{
+        <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+        <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+    } <span style="color:#75715e"># End Params</span>
 
-<span style="color:#75715e"># ----- [ End of Code ] ---------------------------------------------------------------------------</span></code></pre></div>
-<hr>
-<h6 id="saltstack-config-target-using-windows-server-running-service-sql-server">SaltStack Config Target using Windows Server Running Service (SQL Server):</h6>
-<p>
+    $results = Invoke-SSHCommand @Params
 
+    <span style="color:#66d9ef">return</span> $results.Output
+    
+} <span style="color:#75715e"># End Function</span>
 
 
 
 
 
+<span style="color:#75715e"># Minion Grain Append</span>
+<span style="color:#66d9ef">function</span> set-SSC.grains.append
+{
+    <span style="color:#66d9ef">param</span>(
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$minion,
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$grainkey,
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$grainval
+    ) <span style="color:#75715e"># End Parameters</span>
 
+    <span style="color:#75715e"># Grains Append</span>
+    $sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; grains.append &#34;&#39;</span> + $grainkey + <span style="color:#e6db74">&#39;&#34; &#34;&#39;</span> + $grainval + <span style="color:#e6db74">&#39;&#34;&#39;</span>
+    <span style="color:#75715e">#$sshCommand</span>
 
+    $Params = @{
+        <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+        <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+    } <span style="color:#75715e"># End Params</span>
 
+    $results = Invoke-SSHCommand @Params
 
+} <span style="color:#75715e"># End Function</span>
 
 
 
 
 
+<span style="color:#75715e"># Minion Grain DelKey</span>
+<span style="color:#66d9ef">function</span> set-SSC.grains.delkey
+{
+    <span style="color:#66d9ef">param</span>(
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$minion,
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$grainkey
+    ) <span style="color:#75715e"># End Parameters</span>
 
+    $sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; grains.delkey &#34;&#39;</span> + $grainkey + <span style="color:#e6db74">&#39;&#34; force=True&#39;</span>
+    <span style="color:#75715e">#$sshCommand</span>
 
+    $Params = @{
+        <span style="color:#e6db74">&#34;SessionId&#34;</span> = 0
+        <span style="color:#e6db74">&#34;Command&#34;</span>   = $sshCommand
+    } <span style="color:#75715e"># End Params</span>
 
+    $results = Invoke-SSHCommand @Params
 
+} <span style="color:#75715e"># End Function</span>
 
 
 
 
 
+<span style="color:#75715e"># Minion Test Ping</span>
+<span style="color:#66d9ef">function</span> invoke-SSC.test.ping
+{
+    <span style="color:#66d9ef">param</span>(
+        [<span style="color:#66d9ef">parameter</span>(<span style="color:#66d9ef">mandatory</span> = $true)]
+        <span style="color:#66d9ef">[string]</span>$minion
+    ) <span style="color:#75715e"># End Parameters</span>
 
+    $sshCommand = <span style="color:#e6db74">&#39;salt &#34;&#39;</span> + $minion + <span style="color:#e6db74">&#39;&#34; test.ping --output=json&#39;</span>
+    <span style="color:#75715e">#$sshCommand</span>
 
+    $results = Invoke-SSHCommand -SessionId 0 -Command $sshCommand
+    <span style="color:#66d9ef">return</span> $results.Output[1].Trim()
 
+} <span style="color:#75715e"># End Function</span>
 
 
 
 
+<span style="color:#75715e"># ----- [ End of Functions ] --------------------------------------------------------------------------------------------------------------</span></code></pre></div>
+<h6 id="examples-to-show-how-to-use-the-salt-powershell-functions-above">Examples to show how to use the Salt PowerShell Functions above:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># ----- [ Connect to SSC Server ] --------------------------------------------------</span>
 
+<span style="color:#75715e"># DO NOT use plain text PW&#39;s in your Code. I am only showing PW to make it easier to understand the code. </span>
 
+<span style="color:#75715e"># Set Parameter Values</span>
+$Server   = <span style="color:#e6db74">&#39;SaltMaster.vCROCS.local&#39;</span>
+$User     = <span style="color:#e6db74">&#39;root&#39;</span>
+$Password = <span style="color:#e6db74">&#39;VMware1!&#39;</span>
 
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    <span style="color:#e6db74">&#34;Server&#34;</span>   = $Server
+    <span style="color:#e6db74">&#34;User&#34;</span>     = $User
+    <span style="color:#e6db74">&#34;Password&#34;</span> = $Password
+}
 
-<img loading="lazy" decoding="async" class="rounded img-center" width="1699" height="717" src="/geeky-hugo/images/post/Salt-52_hu287e7aa90b59c1c43bb99be51bb16755_94235_1699x0_resize_q1_h2_box_3.webp" alt="" onerror="this.onerror='null';this.src='\/geeky-hugo\/images\/post\/Salt-52_hu287e7aa90b59c1c43bb99be51bb16755_94235_1699x0_resize_box_3.PNG'">
+<span style="color:#75715e"># Connect to SSC</span>
+Connect-SSCServer @Params
 
 
 
+<span style="color:#75715e"># ----- [ Disconnect to SSC Server ] -----------------------------------------------</span>
+Disconnect-SSCServer
 
 
 
+<span style="color:#75715e"># ----- [ Sync Minion grains ] -------------------------------------------------------</span>
+<span style="color:#75715e"># Set Parameter Values</span>
+$minion = <span style="color:#e6db74">&#39;DBH-211&#39;</span>
 
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    <span style="color:#e6db74">&#34;minion&#34;</span> = $minion
+}
 
-<a href="https://github.com/dalehassinger/geeky/raw/main/assets/images/post/Salt-52.PNG" target="_blank">Click Here to see Larger Image of Screen Shot</a></p>
-<hr>
+<span style="color:#75715e"># Run Function</span>
+invoke-SSC.sync.grains @Params
+
+
+
+<span style="color:#75715e"># ----- [ Minion grain append ] ----------------------------------------------------</span>
+<span style="color:#75715e"># Set Parameter Values</span>
+$minion = <span style="color:#e6db74">&#39;DBH-211&#39;</span>
+$grainkey = <span style="color:#e6db74">&#39;PS_Module&#39;</span>
+$grainval = <span style="color:#e6db74">&#39;Works great for Windows Server&#39;</span>
+
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    <span style="color:#e6db74">&#34;minion&#34;</span>   = $minion
+    <span style="color:#e6db74">&#34;grainkey&#34;</span> = $grainkey
+    <span style="color:#e6db74">&#34;grainval&#34;</span> = $grainval
+}
+
+<span style="color:#75715e"># Run Function</span>
+set-SSC.grains.append @Params
+
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    <span style="color:#e6db74">&#34;minion&#34;</span> = $minion
+}
+
+<span style="color:#75715e"># Run Function</span>
+invoke-SSC.sync.grains @Params
+
+
+
+<span style="color:#75715e"># ----- [ Minion grain DelKey ] ----------------------------------------------------</span>
+<span style="color:#75715e"># Set Parameter Values</span>
+$minion = <span style="color:#e6db74">&#39;DBH-211&#39;</span>
+$grainkey = <span style="color:#e6db74">&#39;PS_Module&#39;</span>
+
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    minion   = $minion
+    grainkey = $grainkey
+}
+
+<span style="color:#75715e"># Run Function</span>
+set-SSC.grains.delkey @Params
+
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    <span style="color:#e6db74">&#34;minion&#34;</span> = $minion
+}
+
+<span style="color:#75715e"># Run Function</span>
+invoke-SSC.sync.grains @Params
+
+
+
+<span style="color:#75715e"># ----- [ Minion test.ping ] ----------------------------------------------------</span>
+<span style="color:#75715e"># Set Paramter Values</span>
+$minion = <span style="color:#e6db74">&#39;DBH-211&#39;</span>
+
+<span style="color:#75715e"># Define Parameters (Splatting)</span>
+$Params = @{
+    <span style="color:#e6db74">&#34;minion&#34;</span> = $minion
+}
+
+<span style="color:#75715e"># Run Function</span>
+invoke-SSC.test.ping @Params</code></pre></div>
 <h6 id="lessons-learned">Lessons Learned:</h6>
 <ul>
-<li>Windows Server Features|Roles make a great way to target minions.</li>
-<li>Windows Server installed software also makes a great way to target minions.</li>
-<li>Windows Server Running Services is a good way to target minions.</li>
-<li>If you add custom grain data when the server is created you also need a way to maintain the grain data so it stays up to date and is current.</li>
+<li>Adding the POSH-SSH PowerShell module so you can create a SSH connection to the salt master opens up a lot of possibilities for your PowerShell Automation as a Windows Server Admin.</li>
+<li>Using the PowerShell Functions above as a Windows admin makes it very easy to add this code to existing scripts and use the Power of SaltStack without completely changing your processes.</li>
+<li>Creating a SSH Connection to a remote Salt Master and running commands works well in a &ldquo;Zero Trust&rdquo; environment. With NSX-T all you need to do is setup allow rules between the minions and the master on ports 4505,4506.</li>
 </ul>
 <hr>
 <h6 id="salt-links-i-found-to-be-very-helpful">Salt Links I found to be very helpful:</h6>
@@ -1289,118 +1152,6 @@ When I write about <b>vRealize Automation</b> ("vRA") I always say there are man
       <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
       <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q90_h2_box_3.webp">
       <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
-        alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7" width="1940" height="1000">
-    </picture>
-    
-    
-    
-    <ul class="list-inline card-badge">
-      
-      <li class="list-inline-item">
-        <a href="/geeky-hugo/categories/saltstack-config/" class="badge badge-primary py-1">SaltStack Config</a>
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="card-body">
-    <h3 class="h6">
-      <a class="title-linked" href="/geeky-hugo/blog/saltstack-config-part-07/">VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</a>
-    </h3>
-    <ul class="list-inline card-meta d-flex align-items-center mb-3">
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-user me-2"></i>
-        <a href="/geeky-hugo/about/">Dale Hassinger</a>
-      </li>
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-calendar me-2"></i>
-        <span>January 14, 2022</span>
-      </li>
-    </ul>
-    <p class="card-text mb-4">Part 7: Windows Server Features|Roles and Installed Software as grain data     The more I use VMware vRealize SaltStack Config as a Windows Server Admin the more I see the importance of having grain information added to the minion to be able to target servers many different ways.</p>
-    <a href="/geeky-hugo/blog/saltstack-config-part-07/" class="btn btn-outline-primary btn-sm">Read more</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-      <div class="card">
-  
-  
-  
-  <div class="mb-4 position-relative">
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    <picture>
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q90_h2_box_3.webp">
-      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
-        alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 6" width="1940" height="1000">
-    </picture>
-    
-    
-    
-    <ul class="list-inline card-badge">
-      
-      <li class="list-inline-item">
-        <a href="/geeky-hugo/categories/saltstack-config/" class="badge badge-primary py-1">SaltStack Config</a>
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="card-body">
-    <h3 class="h6">
-      <a class="title-linked" href="/geeky-hugo/blog/saltstack-config-part-06/">VMware vRealize SaltStack Config as a Windows Server Admin - Part 6</a>
-    </h3>
-    <ul class="list-inline card-meta d-flex align-items-center mb-3">
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-user me-2"></i>
-        <a href="/geeky-hugo/about/">Dale Hassinger</a>
-      </li>
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-calendar me-2"></i>
-        <span>October 9, 2021</span>
-      </li>
-    </ul>
-    <p class="card-text mb-4">Part 6: How to use SaltStack Config with Windows Server and PowerShell      The latest item on my journey with VMware vRealize SaltStack Config as a Windows Server Admin is going to be a lot PowerShell.</p>
-    <a href="/geeky-hugo/blog/saltstack-config-part-06/" class="btn btn-outline-primary btn-sm">Read more</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-      <div class="card">
-  
-  
-  
-  <div class="mb-4 position-relative">
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    <picture>
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q90_h2_box_3.webp">
-      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
         alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 5" width="1940" height="1000">
     </picture>
     
@@ -1431,6 +1182,91 @@ When I write about <b>vRealize Automation</b> ("vRA") I always say there are man
     </ul>
     <p class="card-text mb-4">Part 6: How to use SaltStack Config with Windows Server and PowerShell     The latest item on my journey with VMware vRealize SaltStack Config as a Windows Server Admin will be an update to some items that I have talked about in previous posts.</p>
     <a href="/geeky-hugo/blog/saltstack-config-part-05/" class="btn btn-outline-primary btn-sm">Read more</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+      <div class="card">
+  
+  
+  
+  <div class="mb-4">
+    
+  </div>
+  
+  <div class="card-body">
+    <h3 class="h6">
+      <a class="title-linked" href="/geeky-hugo/blog/links/">Favorite Links</a>
+    </h3>
+    <ul class="list-inline card-meta d-flex align-items-center mb-3">
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-user me-2"></i>
+        <a href="/geeky-hugo/about/">Dale Hassinger</a>
+      </li>
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-calendar me-2"></i>
+        <span>January 1, 2020</span>
+      </li>
+    </ul>
+    <p class="card-text mb-4">Links to some of my favorite Bloggers and Content: Bloggers:  Brock Peterson - vRealize Master LucD - PowerShell Master William Lam - VMware Master Yellow Bricks  VMware:  VMware Operations Management Book - Great Book!</p>
+    <a href="/geeky-hugo/blog/links/" class="btn btn-outline-primary btn-sm">Read more</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+      <div class="card">
+  
+  
+  
+  <div class="mb-4 position-relative">
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <picture>
+      <source srcset="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_545x0_resize_q90_h2_box_3.webp" media="(max-width: 575px)">
+      <source srcset="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_600x0_resize_q90_h2_box_3.webp" media="(max-width: 767px)">
+      <source srcset="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_650x0_resize_q90_h2_box_3.webp">
+      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/vexpert-2022-01_huea633dfc62497ad674470427f21ef8c9_70292_650x0_resize_box_3.png"
+        alt="vExpert 2022" width="1940" height="1000">
+    </picture>
+    
+    
+    
+    <ul class="list-inline card-badge">
+      
+      <li class="list-inline-item">
+        <a href="/geeky-hugo/categories/vexpert/" class="badge badge-primary py-1">VExpert</a>
+      </li>
+      
+    </ul>
+  </div>
+  
+  <div class="card-body">
+    <h3 class="h6">
+      <a class="title-linked" href="/geeky-hugo/blog/vexpert-2022/">vExpert 2022</a>
+    </h3>
+    <ul class="list-inline card-meta d-flex align-items-center mb-3">
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-user me-2"></i>
+        <a href="/geeky-hugo/about/">Dale Hassinger</a>
+      </li>
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-calendar me-2"></i>
+        <span>February 22, 2022</span>
+      </li>
+    </ul>
+    <p class="card-text mb-4">vExpert 2020 - 2022   I am very proud to be part of the VMware vExpert program. This is the third year that I was accepted into the program.</p>
+    <a href="/geeky-hugo/blog/vexpert-2022/" class="btn btn-outline-primary btn-sm">Read more</a>
   </div>
 </div>
       </div>
