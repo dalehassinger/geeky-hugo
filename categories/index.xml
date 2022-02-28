@@ -25,5 +25,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Year in Review</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/year-in-review/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/year-in-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SaltConf</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/saltconf/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/saltconf/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
