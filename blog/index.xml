@@ -89,6 +89,15 @@
     </item>
     
     <item>
+      <title>VMworld 2021 - SaltStack Config Session</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/vmworld-2021-mcl1895/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/vmworld-2021-mcl1895/</guid>
+      <description>Manage Windows Workloads Through vRealize Automation SaltStack Config [MCL1895]     I will be doing a VMworld presentation for the first time at VMworld 2021.</description>
+    </item>
+    
+    <item>
       <title>VMware vRealize SaltStack Config as a Windows Server Admin - Part 2</title>
       <link>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-02/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 -0500</pubDate>
@@ -104,6 +113,15 @@
       
       <guid>https://dalehassinger.github.io/geeky-hugo/blog/saltstack-config-part-01/</guid>
       <description>Part 1: How to use SaltStack Config with Windows Server and PowerShell      I have recently started looking at using VMware vRealize SaltStack Config.</description>
+    </item>
+    
+    <item>
+      <title>How vRealize Operations can help with Right Sizing VMs</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/vrealize-operations-right-size/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/vrealize-operations-right-size/</guid>
+      <description>Using vROPS Data to help show APP Owners Proper VM Sizing:  vRealize Operations does a good job to show you what the correct number for vCPU/Memory settings should be based on monitoring history.</description>
     </item>
     
     <item>

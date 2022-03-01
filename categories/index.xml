@@ -43,5 +43,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>VMworld</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/vmworld/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/vmworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vRealize Operations</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/vrealize-operations/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/vrealize-operations/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

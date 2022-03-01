@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on vCROCS</title>
+    <link>https://dalehassinger.github.io/geeky-hugo/tags/performance/</link>
+    <description>Recent content in Performance on vCROCS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 -0500</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How vRealize Operations can help with Right Sizing VMs</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/vrealize-operations-right-size/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/vrealize-operations-right-size/</guid>
+      <description>Using vROPS Data to help show APP Owners Proper VM Sizing:  vRealize Operations does a good job to show you what the correct number for vCPU/Memory settings should be based on monitoring history.</description>
+    </item>
+    
+  </channel>
+</rss>

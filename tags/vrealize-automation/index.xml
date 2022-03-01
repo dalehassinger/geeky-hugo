@@ -25,5 +25,14 @@
       <description>I will be doing a SaltConf presentation for the first time at SaltConf 2021. I attended SaltConf 2020 for the first time after VMware purchased SaltStack Config.</description>
     </item>
     
+    <item>
+      <title>VMworld 2021 - SaltStack Config Session</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/vmworld-2021-mcl1895/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/vmworld-2021-mcl1895/</guid>
+      <description>Manage Windows Workloads Through vRealize Automation SaltStack Config [MCL1895]     I will be doing a VMworld presentation for the first time at VMworld 2021.</description>
+    </item>
+    
   </channel>
 </rss>
