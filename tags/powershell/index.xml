@@ -133,5 +133,14 @@
       <description>Options to use PowerShell Modules   I like to review VMware vRA (vRealize Automation) 8.2 as a Microsoft Windows Server Admin.</description>
     </item>
     
+    <item>
+      <title>Welcome to www.vCROCS.info</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</guid>
+      <description>Your Source for Automation/Monitoring/Logging Content   I have learned a lot from the vCommunity, Powershell and PowerCLI web sites.</description>
+    </item>
+    
   </channel>
 </rss>

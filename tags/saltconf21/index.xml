@@ -16,5 +16,14 @@
       <description>Get-Review 2021  2021 was a good year for me with my career. I spent the entire year working from home and I find myself to be more productive when WFH.</description>
     </item>
     
+    <item>
+      <title>Welcome to www.vCROCS.info</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</guid>
+      <description>Your Source for Automation/Monitoring/Logging Content   I have learned a lot from the vCommunity, Powershell and PowerCLI web sites.</description>
+    </item>
+    
   </channel>
 </rss>

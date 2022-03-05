@@ -427,6 +427,7 @@
 <p>I like to review VMware vRA (vRealize Automation) 8.2 as a Microsoft Windows Server Admin.  Most of the reviews you see are creating Linux VMs and customizing the OS using tools for Linux. I create Windows/Linux VMs and customize the OS using a new feature added to vRA 8.x, Action Based Extensibility (ABX) with PowerShell.</p>
 <p>In my vRA 7.6 environment I use a PowerShell Host to run processes and on the PowerShell Host is where I install all the PS Modules that I use. When I started looking at how to use PowerShell with vRA 8.2 the one item that I needed to understand was how to use PowerShell Modules. VMware does have a Blog Post on how to include PowerShell modules with ABX Actions/vRO Work Flows - <a href="https://blogs.vmware.com/management/2020/07/how-to-abx-vro-powershell-additional-modules.html" target="_blank">Click Here to see the Blog Post</a>. After doing some testing and reviewing my options I decided to continue to use a PowerShell Host with vRA 8.2. What this allows me to do is use the same exact PowerShell Host for 7.6 and 8.2. The existing PS scripts that I have also work with both 7.6 and 8.2. No changes to any scripts and the PS Host. I like how VMware included PS as an options for all scripts within vRA 8.2. Hopefully in the future VMware will allow you to install your own PS Modules directly in the vRA Appliance. The one item that some people may not like about this setup is it does require an additional Windows Server that a standard vRA setup does not require. But to be able to use an existing Windows PS Host that can be shared between vRA 7.6 and 8.2 until I get my environment to 100% vRA 8.2 also has it positives. With Automation there is always many ways to complete the same task.</p>
 <p>I wrote a Blog Post previously that describes how to pass Cloud Template inputs/properties to ABX Actions. This Post is really using that same technique but instead of only running an ABX Action, this ABX Action Script is passing the inputs/customproperties onto a PowerShell Host. Here is link to previous post: <a href="https://www.vcrocs.info/blog/vra81-abx-ps/" target="_blank">VREALIZE AUTOMATION 8.2 - POWERSHELL ABX</a>. By passing the custom properties as parameters to a PS Host I can also use PS Modules to connect to SQL servers and many other options. Basically any PS Module that is available can be used.</p>
+<hr>
 <h6 id="details-on-how-to-use-a-abx-script-with-a-powershell-host">Details on how to use a ABX Script with a PowerShell Host:</h6>
 <div style="background-color:#d9d9d9; Padding:20px;" >
 <b>Step 1:</b>
@@ -719,7 +720,7 @@ resources<span style="color:#960050;background-color:#1e0010">:</span>
   
   <span style="color:#66d9ef">return</span> $LASTEXITCODE
 }</code></pre></div>
-<h4 id="subscription">Subscription:</h4>
+<h6 id="subscription">Subscription:</h6>
 <p>
 
 
@@ -766,6 +767,7 @@ resources<span style="color:#960050;background-color:#1e0010">:</span>
 
 
 <a href="https://github.com/dalehassinger/geeky/raw/main/assets/images/post/pshost-03.PNG" target="_blank">Click Here to see Larger Image of Screen Shot</a></p>
+<hr>
 <div style="background-color:#9ae59a; Padding:20px;" ><b>Lessons Learned:</b>
 <ul>
   <li>vRA 7.6 and 8.2 can share the same PS Host and Scripts.</li>
@@ -883,7 +885,13 @@ resources<span style="color:#960050;background-color:#1e0010">:</span>
     
     <li>
       <a href="/geeky-hugo/categories/vrealize-operations/" class="d-flex">
-        Vrealize operations <small class="ms-auto">2</small>
+        Vrealize operations <small class="ms-auto">3</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/geeky-hugo/categories/welcome/" class="d-flex">
+        Welcome <small class="ms-auto">1</small>
       </a>
     </li>
     
@@ -1145,7 +1153,7 @@ resources<span style="color:#960050;background-color:#1e0010">:</span>
     <div class="row">
       <div class="col-12">
         <div class="section-title">
-          <h2 class="h4 title-border">Releted Posts</h2>
+          <h2 class="h4 title-border">Related Posts</h2>
         </div>
       </div>
     </div>
@@ -1153,6 +1161,62 @@ resources<span style="color:#960050;background-color:#1e0010">:</span>
     
     <div class="row">
       
+      
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+      <div class="card">
+  
+  
+  
+  <div class="mb-4 position-relative">
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <picture>
+      <source srcset="/geeky-hugo/images/post/vCROCS-Logo2_hu30a2c27fc0475af8a9db4432cbed1e9a_50820_545x0_resize_q100_h2_box_3.webp" media="(max-width: 575px)">
+      <source srcset="/geeky-hugo/images/post/vCROCS-Logo2_hu30a2c27fc0475af8a9db4432cbed1e9a_50820_600x0_resize_q100_h2_box_3.webp" media="(max-width: 767px)">
+      <source srcset="/geeky-hugo/images/post/vCROCS-Logo2_hu30a2c27fc0475af8a9db4432cbed1e9a_50820_650x0_resize_q100_h2_box_3.webp">
+      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/vCROCS-Logo2_hu30a2c27fc0475af8a9db4432cbed1e9a_50820_650x0_resize_box_3.png"
+        alt="Welcome to www.vCROCS.info" width="650" height="200">
+    </picture>
+    
+    
+    
+    <ul class="list-inline card-badge">
+      
+      <li class="list-inline-item">
+        <a href="/geeky-hugo/categories/welcome/" class="badge badge-primary py-1">Welcome</a>
+      </li>
+      
+    </ul>
+  </div>
+  
+  <div class="card-body">
+    <h3 class="h6">
+      <a class="title-linked" href="/geeky-hugo/blog/welcome/">Welcome to <a href="http://www.vCROCS.info">www.vCROCS.info</a></a>
+    </h3>
+    <ul class="list-inline card-meta d-flex align-items-center mb-3">
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-user me-2"></i>
+        <a href="/geeky-hugo/about/">Dale Hassinger</a>
+      </li>
+      <li class="list-inline-item d-flex align-items-center">
+        <i class="fas fa-calendar me-2"></i>
+        <span>January 1, 2020</span>
+      </li>
+    </ul>
+    <p class="card-text mb-4">Your Source for Automation/Monitoring/Logging Content   I have learned a lot from the vCommunity, Powershell and PowerCLI web sites.</p>
+    <a href="/geeky-hugo/blog/welcome/" class="btn btn-outline-primary btn-sm">Read more</a>
+  </div>
+</div>
+      </div>
       
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
       <div class="card">
@@ -1262,62 +1326,6 @@ resources<span style="color:#960050;background-color:#1e0010">:</span>
     </ul>
     <p class="card-text mb-4">Part 8: Pouring the salt grains    My previous posts about grain data were to show how to add minion grain data during the creation of a new server with vRA using PowerShell.</p>
     <a href="/geeky-hugo/blog/saltstack-config-part-08/" class="btn btn-outline-primary btn-sm">Read more</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-      <div class="card">
-  
-  
-  
-  <div class="mb-4 position-relative">
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    <picture>
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_545x0_resize_q100_h2_box_3.webp" media="(max-width: 575px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_600x0_resize_q100_h2_box_3.webp" media="(max-width: 767px)">
-      <source srcset="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_q100_h2_box_3.webp">
-      <img loading="lazy" decoding="async" class="img-fluid w-100 rounded-4" src="/geeky-hugo/images/post/salt_huea633dfc62497ad674470427f21ef8c9_166891_650x0_resize_box_3.png"
-        alt="VMware vRealize SaltStack Config as a Windows Server Admin - Part 7" width="1940" height="1000">
-    </picture>
-    
-    
-    
-    <ul class="list-inline card-badge">
-      
-      <li class="list-inline-item">
-        <a href="/geeky-hugo/categories/saltstack-config/" class="badge badge-primary py-1">SaltStack Config</a>
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="card-body">
-    <h3 class="h6">
-      <a class="title-linked" href="/geeky-hugo/blog/saltstack-config-part-07/">VMware vRealize SaltStack Config as a Windows Server Admin - Part 7</a>
-    </h3>
-    <ul class="list-inline card-meta d-flex align-items-center mb-3">
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-user me-2"></i>
-        <a href="/geeky-hugo/about/">Dale Hassinger</a>
-      </li>
-      <li class="list-inline-item d-flex align-items-center">
-        <i class="fas fa-calendar me-2"></i>
-        <span>January 14, 2022</span>
-      </li>
-    </ul>
-    <p class="card-text mb-4">Part 7: Windows Server Features|Roles and Installed Software as grain data     The more I use VMware vRealize SaltStack Config as a Windows Server Admin the more I see the importance of having grain information added to the minion to be able to target servers many different ways.</p>
-    <a href="/geeky-hugo/blog/saltstack-config-part-07/" class="btn btn-outline-primary btn-sm">Read more</a>
   </div>
 </div>
       </div>

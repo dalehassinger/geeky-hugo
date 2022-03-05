@@ -16,5 +16,14 @@
       <description>Using vROPS Data to help show APP Owners Proper VM Sizing:  vRealize Operations does a good job to show you what the correct number for vCPU/Memory settings should be based on monitoring history.</description>
     </item>
     
+    <item>
+      <title>Creating Charts with ChartJS and displaying in vRealize Operations</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/chartjs/</link>
+      <pubDate>Sun, 03 Jan 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/chartjs/</guid>
+      <description>I like the idea of using VMware vRealize Operations as the “Single Pane of Glass” for all monitoring. The Citrix Team recently asked me if I could show license usage within vRealize Operations.</description>
+    </item>
+    
   </channel>
 </rss>

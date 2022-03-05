@@ -161,6 +161,15 @@
     </item>
     
     <item>
+      <title>Creating Charts with ChartJS and displaying in vRealize Operations</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/chartjs/</link>
+      <pubDate>Sun, 03 Jan 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/chartjs/</guid>
+      <description>I like the idea of using VMware vRealize Operations as the “Single Pane of Glass” for all monitoring. The Citrix Team recently asked me if I could show license usage within vRealize Operations.</description>
+    </item>
+    
+    <item>
       <title>Favorite Links</title>
       <link>https://dalehassinger.github.io/geeky-hugo/blog/links/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
@@ -170,12 +179,21 @@
     </item>
     
     <item>
+      <title>Welcome to www.vCROCS.info</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</guid>
+      <description>Your Source for Automation/Monitoring/Logging Content   I have learned a lot from the vCommunity, Powershell and PowerCLI web sites.</description>
+    </item>
+    
+    <item>
       <title>About Dale Hassinger</title>
       <link>https://dalehassinger.github.io/geeky-hugo/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dalehassinger.github.io/geeky-hugo/about/</guid>
-      <description>Lead Systems Engineer, SME, vExpert 2020 - 2022, vExpert Cloud Management 2021 If you can script it, You can Automate it&amp;hellip;  My current focus is Enterprise Automation, Monitoring and Logging.</description>
+      <description>Lead Systems Engineer, SME, vExpert 2020 - 2022, vExpert Cloud Management 2021 If you can script it, You can Automate it!</description>
     </item>
     
     <item>
