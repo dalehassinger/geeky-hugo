@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSX on vCROCS</title>
+    <link>https://dalehassinger.github.io/geeky-hugo/tags/nsx/</link>
+    <description>Recent content in NSX on vCROCS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 -0500</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/tags/nsx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Ports - Zero Trust</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/check-ports/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/check-ports/</guid>
+      <description>How to check if ports are open to a remote server  PowerShell Code Use PowerShell to see if ports are open to a remote server.</description>
+    </item>
+    
+  </channel>
+</rss>

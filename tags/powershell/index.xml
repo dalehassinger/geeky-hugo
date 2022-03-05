@@ -106,5 +106,23 @@
       <description>Part 1: How to use SaltStack Config with Windows Server and PowerShell      I have recently started looking at using VMware vRealize SaltStack Config.</description>
     </item>
     
+    <item>
+      <title>Open Ports - Zero Trust</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/check-ports/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/check-ports/</guid>
+      <description>How to check if ports are open to a remote server  PowerShell Code Use PowerShell to see if ports are open to a remote server.</description>
+    </item>
+    
+    <item>
+      <title>Schedule RVTools Data Export</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/schedule-rvtools/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/schedule-rvtools/</guid>
+      <description>Export RVTools xls Files Everyday   PowerShell Code I like to create a Scheduled Task in vRealize Orchestrator to create RVTools files everyday.</description>
+    </item>
+    
   </channel>
 </rss>

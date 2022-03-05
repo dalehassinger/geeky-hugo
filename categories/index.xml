@@ -61,5 +61,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>RVTools</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/rvtools/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/rvtools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zero Trust</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/zero-trust/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/zero-trust/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
