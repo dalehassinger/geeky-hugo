@@ -25,5 +25,14 @@
       <description>Manage Windows Workloads Through vRealize Automation SaltStack Config [MCL1895]     I will be doing a VMworld presentation for the first time at VMworld 2021.</description>
     </item>
     
+    <item>
+      <title>How to use PowerShell Modules with vRA 8.2</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/vra-82-powershell-host/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/vra-82-powershell-host/</guid>
+      <description>Options to use PowerShell Modules   I like to review VMware vRA (vRealize Automation) 8.2 as a Microsoft Windows Server Admin.</description>
+    </item>
+    
   </channel>
 </rss>
