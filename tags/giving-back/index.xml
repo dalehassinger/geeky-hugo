@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>Twitter Feed</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/twitter/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/twitter/</guid>
+      <description> Tweets by dalehassinger  </description>
+    </item>
+    
+    <item>
       <title>Welcome to www.vCROCS.info</title>
       <link>https://dalehassinger.github.io/geeky-hugo/blog/welcome/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>

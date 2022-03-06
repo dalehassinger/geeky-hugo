@@ -89,6 +89,42 @@
     </item>
     
     <item>
+      <title>Podcast</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/podcast/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/podcast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerCLI</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/powercli/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/powercli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry PI</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/raspberry-pi/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/categories/twitter/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/categories/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Welcome</title>
       <link>https://dalehassinger.github.io/geeky-hugo/categories/welcome/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PowerCLI on vCROCS</title>
+    <link>https://dalehassinger.github.io/geeky-hugo/categories/powercli/</link>
+    <description>Recent content in PowerCLI on vCROCS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Apr 2020 00:00:00 -0500</lastBuildDate><atom:link href="https://dalehassinger.github.io/geeky-hugo/categories/powercli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI Getting Started</title>
+      <link>https://dalehassinger.github.io/geeky-hugo/blog/powercli-getting-started/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 -0500</pubDate>
+      
+      <guid>https://dalehassinger.github.io/geeky-hugo/blog/powercli-getting-started/</guid>
+      <description>PowerCLI Basics    PowerCLI Code Some basic PowerCLI commands
+#Here are some basic commands that you can keep adding additional code #and get more precise on what you want to see.</description>
+    </item>
+    
+  </channel>
+</rss>
